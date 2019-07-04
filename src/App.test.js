@@ -13,11 +13,11 @@ configure({
 })
 
 describe('<App />', () => {
-  it('should render App', () => {
-    const wrapper = shallow(<App />, {
-      context: {},
-      disableLifecycleMethods: true
-    })
-    console.log(wrapper.debug())
+  const wrapper = shallow(<App />)
+  it('should contain a greeting element', () => {
+    expect(wrapper.find('.app__greeting').exists()).toBe(true)
+    expect(wrapper.find('.app__greeting').text()).toBe('Hello, Enzyme and Jest!')
+    expect(wrapper.find('ul').hasClass('app__items')).toBe(true)
+    expect(wrapper.find('.app__items').children().length).toBe(3)
   })
 })

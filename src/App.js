@@ -10,7 +10,12 @@ const Test = () => (
 
 const App = () => (
   <div className="app">
-    <p>Hello, Enzyme and Jest!</p>
+    <p className="app__greeting">Hello, Enzyme and Jest!</p>
+    <ul className="app__items">
+      <li>Apples</li>
+      <li>Oranges</li>
+      <li>Bananas</li>
+    </ul>
     <Test />
   </div>
 )
